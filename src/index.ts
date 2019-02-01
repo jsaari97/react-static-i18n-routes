@@ -50,15 +50,17 @@ const buildRouteChildren = (routes: BaseRoute[], locale: string): Route[] | [] =
 
     const posts = route.files.filter(file => !file.root && file.locale === locale)
 
+    const children = posts.map((child): Route => ({
+      path: child.path,
+      component: route.component,
+      getData: () => pruneRouteData(child),
+    }))
+
     return {
       path: route.path,
       component: route.component,
-      getData: () => rootRoute ? pruneRouteData(rootRoute) : null,
-      children: posts.map((child): Route => ({
-        path: child.path,
-        component: route.component,
-        getData: () => pruneRouteData(child)
-      })),
+      getData: () => rootRoute ? { ...pruneRouteData(rootRoute), childRoutes: children } : null,
+      children,
     }
   })
 
