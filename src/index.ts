@@ -33,8 +33,8 @@ const parseMarkdown = (defaultLocale: string) => (pathname: string): MarkdownFil
   }
 }
 
-const loadMarkdown = (contentDirectory: string, parseFunc: ParseFunction): BaseRoute[] => {
-  return find.dirSync(path.join(process.cwd(), contentDirectory))
+const loadMarkdown = (contentDirectory: string, parseFunc: ParseFunction): BaseRoute[] =>
+  find.dirSync(path.join(process.cwd(), contentDirectory))
     .map((pathname) => {
       const route = pathname.split(contentDirectory.replace('.', ''))[1]
       return {
