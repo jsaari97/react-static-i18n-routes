@@ -33,13 +33,13 @@ const parseMarkdown = (defaultLocale: string) => (pathname: string): MarkdownFil
   }
 }
 
-const loadMarkdown = (contentDirectory: string, parseFunc: ParseFunction): BaseRoute[] =>
-  find.dirSync(path.resolve(__dirname, contentDirectory))
+const loadMarkdown = (contentDirectory: string, parseFunc: ParseFunction): BaseRoute[] => {
+  return find.dirSync(path.join(process.cwd(), contentDirectory))
     .map((pathname) => {
       const route = pathname.split(contentDirectory.replace('.', ''))[1]
       return {
         path: route,
-        component: path.join('src/pages', route),
+        component: `${path.join('src/containers', route)}.js`,
         files: find.fileSync(/\.md$/, pathname).map(parseFunc),
       }
     })
@@ -67,7 +67,7 @@ const generateRoutes = (routes: BaseRoute[], { locales, defaultLocale, contentFo
     const {
       data: frontmatter,
       content,
-    } = matter.read(path.resolve(__dirname, `${contentFolder}/index${locale !== defaultLocale ? `.${locale}` : ''}.md`))
+    } = matter.read(path.resolve(process.cwd(), `${contentFolder}/index${locale !== defaultLocale ? `.${locale}` : ''}.md`))
 
     return {
       path: `/${locale !== defaultLocale ? locale : ''}`,
