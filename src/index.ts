@@ -73,7 +73,7 @@ const generateRoutes = (routes: BaseRoute[], { locales, defaultLocale, contentFo
 
     return {
       path: `/${locale !== defaultLocale ? locale : ''}`,
-      component: 'src/pages/',
+      component: 'src/containers/index.js',
       getData: () => ({
         frontmatter,
         content
