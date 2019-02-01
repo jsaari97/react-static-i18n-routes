@@ -55,7 +55,7 @@ const buildRouteChildren = (routes: BaseRoute[], locale: string): Route[] | [] =
     }
   })
 
-const generateRoutes = (routes: BaseRoute[], { locales, defaultLocale, contentFolder }: SafeConfiguration) =>
+const buildRoutes = (routes: BaseRoute[], { locales, defaultLocale, contentFolder }: SafeConfiguration) =>
   locales.map(locale => {
     const {
       data: frontmatter,
@@ -84,7 +84,7 @@ const main = (options: Configuration): Route[] => {
   const raw = loadMarkdown(options.contentFolder, parseMarkdown(config.defaultLocale))
 
   // format routes
-  const routes = generateRoutes(raw, config)
+  const routes = buildRoutes(raw, config)
 
   return routes
 }
