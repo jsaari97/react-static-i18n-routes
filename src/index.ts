@@ -9,18 +9,9 @@ export { Configuration, Route }
 
 const pruneRouteData = (route: MarkdownFile): RouteData => R.pick(['frontmatter', 'content'], route)
 
-const getFilename = (pathname: string) => {
-  const re = pathname.match(/([^/]*)\.[^.]*$/)
-  if (!re) {
-    throw new Error('could not get filename.')
-  }
-
-  return re[1]
-}
-
 const parseMarkdown = (defaultLocale: string) => (pathname: string): MarkdownFile => {
   const { data: frontmatter, content } = matter.read(pathname)
-  const filename = getFilename(pathname)
+  const filename = path.basename(pathname, 'md')
 
   const split = filename.split('.')
 
