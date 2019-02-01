@@ -7,7 +7,13 @@
   "module": "build/module/index.js",
   "repository": "https://github.com/jsaari97/react-static-i18n-routes",
   "license": "MIT",
-  "keywords": ["react", "static", "react-static", "i18n", "routes"],
+  "keywords": [
+    "react",
+    "static",
+    "react-static",
+    "i18n",
+    "routes"
+  ],
   "scripts": {
     "describe": "npm-scripts-info",
     "build": "run-s clean && run-p build:*",
@@ -54,12 +60,10 @@
   "dependencies": {
     "find": "^0.2.9",
     "gray-matter": "^4.0.2",
-    "ramda": "^0.26.1",
     "slugify": "^1.3.4"
   },
   "devDependencies": {
     "@types/find": "^0.2.1",
-    "@types/ramda": "^0.25.47",
     "ava": "1.0.0-beta.7",
     "codecov": "^3.1.0",
     "cz-conventional-changelog": "^2.1.0",
