@@ -5,7 +5,7 @@ const main = (options: Configuration): Route[] => {
   // union of locales, in case user added defaultLocale to locales[]
   const config: SafeConfiguration = {
     ...options,
-    locales: [...new Set([...(options.locales || []), options.defaultLocale])]
+    locales: [...new Set([...(options.locales || []), options.defaultLocale])],
   }
 
   // retrieve markdown files

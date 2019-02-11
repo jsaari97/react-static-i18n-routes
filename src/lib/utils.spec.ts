@@ -3,7 +3,7 @@ import test from 'ava'
 import { pruneRouteData } from './utils'
 import { MarkdownFile, RouteData } from '../types'
 
-test('pruneRouteData returns correct shape', t => {
+test('pruneRouteData returns correct shape', (t) => {
   const md: MarkdownFile = {
     content: '',
     frontmatter: { key: 'value' },
@@ -21,7 +21,7 @@ test('pruneRouteData returns correct shape', t => {
   t.deepEqual(result, expected)
 })
 
-test('pruneRouteData handles empty frontmatter', t => {
+test('pruneRouteData handles empty frontmatter', (t) => {
   const md: MarkdownFile = {
     content: '',
     frontmatter: {},

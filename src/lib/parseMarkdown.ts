@@ -14,7 +14,7 @@ const parseMarkdown = (defaultLocale: string) => (pathname: string): MarkdownFil
     content,
     root: filename.indexOf('index') !== -1,
     locale: split[1] || defaultLocale,
-    path: `${slugify(split[0].replace(/^\//, ''))}`
+    path: `${slugify(split[0].replace(/^\//, ''))}`,
   }
 }
 
