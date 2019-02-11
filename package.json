@@ -12,6 +12,8 @@
     "static",
     "react-static",
     "i18n",
+    "markdown",
+    "md",
     "routes"
   ],
   "scripts": {
