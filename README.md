@@ -5,6 +5,7 @@
 This is a utility library to quickly produce a i18n and SEO friendly react-static by generating i18n routes eg `/de/about`. Works great with Netlify CMS.
 
 ![codecov](https://img.shields.io/codecov/c/github/jsaari97/react-static-i18n-routes.svg?style=flat)
+![circleci](https://img.shields.io/circleci/project/github/jsaari97/react-static-i18n-routes/master.svg?style=flat)
 
 ## Usage
 
