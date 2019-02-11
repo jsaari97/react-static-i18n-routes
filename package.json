@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@types/find": "^0.2.1",
+    "@types/node": "^10.12.24",
     "ava": "^1.2.1",
     "codecov": "^3.1.0",
     "cz-conventional-changelog": "^2.1.0",
